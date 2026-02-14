@@ -151,7 +151,7 @@ export default function Download() {
           {timeLeft && (
             <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
               <div className="countdown">{timeLeft}</div>
-              <p style={{ fontSize: '0.9rem', color: '#666' }}>
+              <p style={{ fontSize: '0.9rem', color: '#888' }}>
                 Time remaining
               </p>
             </div>

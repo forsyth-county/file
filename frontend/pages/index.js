@@ -171,7 +171,7 @@ export default function Home() {
                   </button>
                 </div>
               ))}
-              <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#666' }}>
+              <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#888' }}>
                 Total: {files.length} file{files.length !== 1 ? 's' : ''} ({formatFileSize(totalSize)})
               </div>
             </div>

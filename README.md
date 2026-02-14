@@ -107,7 +107,24 @@ npm run dev
 
 ### Frontend (GitHub Pages)
 
-1. Update the backend URL in your repository:
+#### Option 1: Automatic Deployment (Recommended)
+
+This repository includes a GitHub Actions workflow that automatically deploys to GitHub Pages when you push to the main branch.
+
+1. Go to your GitHub repository settings
+2. Navigate to **Settings** > **Pages**
+3. Under **Source**, select **GitHub Actions**
+4. Add your backend URL as a repository secret:
+   - Go to **Settings** > **Secrets and variables** > **Actions**
+   - Click **New repository secret**
+   - Name: `BACKEND_URL`
+   - Value: `https://your-backend.onrender.com` (your Render backend URL)
+5. Push to the main branch or manually trigger the workflow
+6. Your site will be available at `https://yourusername.github.io/file/`
+
+#### Option 2: Manual Deployment
+
+1. Update the backend URL:
    - Create `.env.local` in frontend directory:
      ```
      NEXT_PUBLIC_BACKEND_URL=https://your-backend.onrender.com
@@ -123,9 +140,10 @@ npm run build
 3. The static files will be in `frontend/out/`
 
 4. Deploy to GitHub Pages:
-   - Enable GitHub Pages in repository settings
-   - Set source to your deployment branch
-   - Upload the contents of `frontend/out/` to the branch
+   - Create a new branch (e.g., `gh-pages`)
+   - Copy the contents of `frontend/out/` to the root of this branch
+   - Push to GitHub
+   - Enable GitHub Pages in repository settings, pointing to the `gh-pages` branch
 
 ## Configuration
 
@@ -137,6 +155,14 @@ npm run build
 ### Frontend Environment Variables
 
 - `NEXT_PUBLIC_BACKEND_URL`: Backend API URL (default: `http://localhost:3001`)
+
+### Important Notes for GitHub Pages Deployment
+
+1. **CORS Configuration**: Ensure your backend CORS settings allow requests from your GitHub Pages domain
+2. **HTTPS Required**: GitHub Pages serves over HTTPS, so your backend must support HTTPS (Render.com provides this automatically)
+3. **Backend URL**: Set the `BACKEND_URL` secret in your GitHub repository for automatic deployments
+4. **Custom Domain**: You can configure a custom domain in GitHub Pages settings if desired
+5. **Base Path**: This setup works for repository pages (e.g., `username.github.io/file/`)
 
 ## Usage
 

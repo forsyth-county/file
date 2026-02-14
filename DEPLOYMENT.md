@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - [ ] GitHub account
-- [ ] Render.com account (free tier works)
+- [ ] Render.com account (free tier works
 - [ ] Repository pushed to GitHub
 
 ## Backend Deployment (Render.com)

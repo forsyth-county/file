@@ -11,14 +11,38 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0a0a0a;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-position: center center;
+  background-color: #000000;
   min-height: 100vh;
   color: #e0e0e0;
+  position: relative;
+}
+
+html::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, #262626 1px, transparent 1px),
+    linear-gradient(to bottom, #262626 1px, transparent 1px);
+  z-index: 0;
+}
+
+html::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 20%, black);
+  mask-image: radial-gradient(ellipse at center, transparent 20%, black);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .container {
@@ -30,6 +54,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .card {
@@ -48,7 +74,7 @@ body {
   font-weight: bold;
   margin-bottom: 0.5rem;
   text-align: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -62,7 +88,7 @@ body {
 }
 
 .upload-area {
-  border: 3px dashed rgba(102, 126, 234, 0.5);
+  border: 3px dashed rgba(59, 130, 246, 0.5);
   border-radius: 8px;
   padding: 3rem;
   text-align: center;
@@ -74,14 +100,14 @@ body {
 
 .upload-area:hover,
 .upload-area.drag-over {
-  border-color: #667eea;
-  background-color: rgba(102, 126, 234, 0.1);
+  border-color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
 }
 
 .upload-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #667eea;
+  color: #3b82f6;
 }
 
 .upload-text {
@@ -147,7 +173,7 @@ body {
 }
 
 .btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -162,7 +188,7 @@ body {
 
 .btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
 }
 
 .btn:disabled {
@@ -172,14 +198,14 @@ body {
 
 .btn-secondary {
   background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
   margin-top: 0.5rem;
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background: #f8f9ff;
-  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
 }
 
 .progress-container {
@@ -195,7 +221,7 @@ body {
 }
 
 .progress-bar-fill {
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
   height: 100%;
   transition: width 0.3s ease;
 }
@@ -207,8 +233,8 @@ body {
 }
 
 .code-display {
-  background: rgba(102, 126, 234, 0.1);
-  border: 3px solid #667eea;
+  background: rgba(59, 130, 246, 0.1);
+  border: 3px solid #3b82f6;
   border-radius: 12px;
   padding: 2rem;
   text-align: center;
@@ -224,7 +250,7 @@ body {
 .code-value {
   font-size: 4rem;
   font-weight: bold;
-  color: #667eea;
+  color: #3b82f6;
   letter-spacing: 0.5rem;
   margin: 1rem 0;
   font-family: 'Courier New', monospace;
@@ -247,13 +273,13 @@ body {
 
 .code-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #3b82f6;
   background: rgba(255, 255, 255, 0.08);
 }
 
 .countdown {
   font-size: 1.5rem;
-  color: #764ba2;
+  color: #3b82f6;
   font-weight: 600;
   margin: 1rem 0;
   font-family: 'Courier New', monospace;
@@ -295,12 +321,12 @@ body {
 }
 
 .download-item:hover {
-  background: rgba(102, 126, 234, 0.1);
-  border-color: rgba(102, 126, 234, 0.3);
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 .download-btn {
-  background: #667eea;
+  background: #3b82f6;
   color: white;
   border: none;
   border-radius: 6px;
@@ -312,11 +338,11 @@ body {
 }
 
 .download-btn:hover {
-  background: #5568d3;
+  background: #2563eb;
 }
 
 .back-link {
-  color: #667eea;
+  color: #3b82f6;
   text-decoration: none;
   display: inline-block;
   margin-bottom: 1rem;
@@ -325,7 +351,7 @@ body {
 }
 
 .back-link:hover {
-  color: #764ba2;
+  color: #2563eb;
   transform: translateX(-3px);
 }
 

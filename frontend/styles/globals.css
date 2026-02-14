@@ -11,9 +11,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: #0a0a0a;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center center;
   min-height: 100vh;
-  color: #333;
+  color: #e0e0e0;
 }
 
 .container {
@@ -28,12 +33,14 @@ body {
 }
 
 .card {
-  background: white;
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 3rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 600px;
+  backdrop-filter: blur(10px);
 }
 
 .title {
@@ -41,30 +48,34 @@ body {
   font-weight: bold;
   margin-bottom: 0.5rem;
   text-align: center;
-  color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
   font-size: 1.1rem;
-  color: #666;
+  color: #888;
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .upload-area {
-  border: 3px dashed #667eea;
+  border: 3px dashed rgba(102, 126, 234, 0.5);
   border-radius: 8px;
   padding: 3rem;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .upload-area:hover,
 .upload-area.drag-over {
-  border-color: #764ba2;
-  background-color: #f8f9ff;
+  border-color: #667eea;
+  background-color: rgba(102, 126, 234, 0.1);
 }
 
 .upload-icon {
@@ -75,13 +86,13 @@ body {
 
 .upload-text {
   font-size: 1.1rem;
-  color: #333;
+  color: #e0e0e0;
   margin-bottom: 0.5rem;
 }
 
 .upload-hint {
   font-size: 0.9rem;
-  color: #999;
+  color: #888;
 }
 
 .file-input {
@@ -97,9 +108,10 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .file-info {
@@ -111,11 +123,12 @@ body {
 .file-name {
   font-weight: 500;
   margin-bottom: 0.25rem;
+  color: #e0e0e0;
 }
 
 .file-size {
   font-size: 0.85rem;
-  color: #666;
+  color: #888;
 }
 
 .remove-btn {
@@ -174,7 +187,7 @@ body {
 }
 
 .progress-bar-bg {
-  background: #e0e0e0;
+  background: rgba(255, 255, 255, 0.1);
   height: 8px;
   border-radius: 4px;
   overflow: hidden;
@@ -189,12 +202,12 @@ body {
 
 .progress-text {
   font-size: 0.9rem;
-  color: #666;
+  color: #888;
   margin-bottom: 0.25rem;
 }
 
 .code-display {
-  background: #f8f9ff;
+  background: rgba(102, 126, 234, 0.1);
   border: 3px solid #667eea;
   border-radius: 12px;
   padding: 2rem;
@@ -204,7 +217,7 @@ body {
 
 .code-label {
   font-size: 1rem;
-  color: #666;
+  color: #888;
   margin-bottom: 0.5rem;
 }
 
@@ -222,17 +235,20 @@ body {
   padding: 1.5rem;
   font-size: 2rem;
   text-align: center;
-  border: 2px solid #e0e0e0;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   font-family: 'Courier New', monospace;
   letter-spacing: 0.5rem;
   margin-bottom: 1rem;
   transition: border-color 0.2s;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
 }
 
 .code-input:focus {
   outline: none;
   border-color: #667eea;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .countdown {
@@ -271,14 +287,16 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   margin-bottom: 0.75rem;
   transition: background 0.2s;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .download-item:hover {
-  background: #f8f9ff;
+  background: rgba(102, 126, 234, 0.1);
+  border-color: rgba(102, 126, 234, 0.3);
 }
 
 .download-btn {
@@ -298,16 +316,17 @@ body {
 }
 
 .back-link {
-  color: white;
+  color: #667eea;
   text-decoration: none;
   display: inline-block;
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
 }
 
 .back-link:hover {
-  opacity: 0.8;
+  color: #764ba2;
+  transform: translateX(-3px);
 }
 
 @media (max-width: 640px) {
